@@ -1,15 +1,15 @@
 #define BLYNK_PRINT Serial
-#define BLYNK_TEMPLATE_ID "TMPL6fjFYbpWl"
-#define BLYNK_TEMPLATE_NAME "NodeMCU"
-#define BLYNK_AUTH_TOKEN "ZQvFu2mudUBC-jHj4kOP03NK0wUoKLWY"
+#define BLYNK_TEMPLATE_ID "Your_Blynk_Template_ID"
+#define BLYNK_TEMPLATE_NAME "Your_Template_Name"
+#define BLYNK_AUTH_TOKEN "Your_Blynk_Auth_token"
 
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 #include <Servo.h>
 
-char auth[] = "ZQvFu2mudUBC-jHj4kOP03NK0wUoKLWY"; // Auth token from the Blynk app
-char ssid[] = "Evone 2.4"; // WiFi SSID
-char pass[] = "2023evonej"; // WiFi password
+char auth[] = "Your_Blynk_Auth_token"; // Auth token from the Blynk app
+char ssid[] = "WiFi_SSID"; // WiFi SSID
+char pass[] = "WiFi_password"; // WiFi password
 
 int servBase, servShoulder, servElbow, servClaw;
 int value, value1, value2, value3;
@@ -43,12 +43,13 @@ BLYNK_WRITE(V3){
 void setup() {
   // Initialize Serial Communication
   Serial.begin(9600);
+  // Initialize Blynk
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Run Blynk
   Blynk.run();
   delay(15);
   Serial.print(servBase);
